@@ -1,0 +1,24 @@
+.list__title {
+  text-align: center;
+}
+
+.list__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list__container__item {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list__container__list {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list__container__input {
+  display: flex;
+  width: 50%;
+}
