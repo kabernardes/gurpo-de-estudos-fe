@@ -22,7 +22,7 @@ const standardShoppingList = [
 const ShoppingList = () => {
   const [shoppingList, setShoppingList] = useState([]);
   const [item, setItem] = useState('');
-  
+
   const handleSubmit = () => {
     if (item.trim() !== '') {
       setShoppingList([...shoppingList, item]);
@@ -38,20 +38,42 @@ const ShoppingList = () => {
   return (
     <div className="list">
       <h2 className="list__title">Shopping list</h2>
-     
-      <div className='list__form'>
+
+      <div className="list__form">
         <input value={item} onChange={(e) => setItem(e.target.value)} />
         <button onClick={handleSubmit}>+</button>
       </div>
-        
+
       <div className="list__container__item">
-        <p>Item</p>
-        <button>+3</button>
-        <button>+</button>
-        <button>-</button>
-        <button>-3</button>
+        <div className="items">
+          <p>Item</p>
+          <div className="buttons">
+            <button>+3</button>
+            <button>+</button>
+            <button>-</button>
+            <button>-3</button>
+          </div>
+        </div>
+        <div className="items">
+          <p>Item</p>
+          <div className="buttons">
+            <button>+3</button>
+            <button>+</button>
+            <button>-</button>
+            <button>-3</button>
+          </div>
+        </div>
+        <div className="items">
+          <p>Item</p>
+          <div className="buttons">
+            <button>+3</button>
+            <button>+</button>
+            <button>-</button>
+            <button>-3</button>
+          </div>
+        </div>
       </div>
-      
+
       <div className="list__container__list">
         <div className="title-group">
           <h3>List</h3>
