@@ -36,36 +36,35 @@ const ShoppingList = () => {
   };
 
   return (
-    <div className="list">
-      <h2 className="list__title">Shopping list</h2>
-
-      <div className="list__form">
-        <input value={item} onChange={(e) => setItem(e.target.value)} />
-        <button onClick={handleSubmit}>+</button>
+    <div className="shoppingList">
+      <div className="header">
+        <h2 className="header__title">Shopping list</h2>
       </div>
 
-      <div className="list__container__item">
-        <div className="items">
-          <p>Item</p>
-          <div className="buttons">
+      <div className="form">
+        <input
+          className="form__input"
+          value={item}
+          onChange={(e) => setItem(e.target.value)}
+        />
+        <button className="form__button" onClick={handleSubmit}>
+          +
+        </button>
+      </div>
+
+      <div className="list">
+        <div className="list__products">
+          <p className="list__title">Item</p>
+          <div className="list__buttons">
             <button>+3</button>
             <button>+</button>
             <button>-</button>
             <button>-3</button>
           </div>
         </div>
-        <div className="items">
-          <p>Item</p>
-          <div className="buttons">
-            <button>+3</button>
-            <button>+</button>
-            <button>-</button>
-            <button>-3</button>
-          </div>
-        </div>
-        <div className="items">
-          <p>Item</p>
-          <div className="buttons">
+        <div className="list__products">
+          <p className="list__title">Item</p>
+          <div className="list__buttons">
             <button>+3</button>
             <button>+</button>
             <button>-</button>
@@ -74,8 +73,8 @@ const ShoppingList = () => {
         </div>
       </div>
 
-      <div className="list__container__list">
-        <div className="title-group">
+      <div className="cart">
+        <div className="cart__header">
           <h3>List</h3>
           <button onClick={handleAddStandardList}>Add list</button>
         </div>
