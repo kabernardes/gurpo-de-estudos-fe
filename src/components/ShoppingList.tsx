@@ -1,3 +1,4 @@
+import { List } from './List';
 import './ShoppingList.css';
 import { useState } from 'react';
 
@@ -20,7 +21,7 @@ const standardShoppingList = [
 ];
 
 const ShoppingList = () => {
-  const [shoppingList, setShoppingList] = useState([]);
+  const [shoppingList, setShoppingList] = useState<string[]>([]);
   const [item, setItem] = useState('');
 
   const handleSubmit = () => {
@@ -35,6 +36,53 @@ const ShoppingList = () => {
     setShoppingList(shoppingList.concat(standardShoppingList));
   };
 
+  const numbers = [1, 8, 5, 9];
+
+  const numbersReduced = numbers.reduce((accumulator, item) => {
+    return (accumulator += item);
+  }, 0);
+
+  console.log('numbersReduced', numbersReduced);
+
+  const numbersReducedTest = numbers.reduce(
+    (accumulator, item) => (accumulator += item),
+    0
+  ); 
+
+   console.log('numbersReducedTest', numbersReducedTest);
+
+
+   const items = [
+     {
+       name: 'Apple',
+       category: 'fruit',
+     },
+     {
+       name: 'Onion',
+       category: 'vegetable',
+     },
+     {
+       name: 'orange',
+       category: 'fruit',
+     },
+     {
+       name: 'lettuce',
+       category: 'vegetable',
+     },
+   ];
+
+   const groupedItems = items.reduce((acc, item) => {
+     const category = item.category;
+
+     if (!acc[category]) {
+       acc[category] = [];
+     }
+
+     acc[category].push(item.name);
+     return acc;
+   }, {});
+
+   console.log('groupedItems', groupedItems);
   return (
     <div className="shoppingList">
       <div className="header">
@@ -73,20 +121,15 @@ const ShoppingList = () => {
         </div>
       </div>
 
-      <div className="cart">
-        <div className="cart__header">
-          <h3>List</h3>
-          <button onClick={handleAddStandardList}>Add list</button>
-        </div>
-
-        <ul>
-          {shoppingList?.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </div>
+      <List handleAddStandardList={handleAddStandardList} shoppingList={shoppingList} />
     </div>
   );
 };
 
 export default ShoppingList;
+
+// form;
+
+// list;
+
+// cart;

@@ -42,6 +42,8 @@ type Dev2 = {
   age?: number;
 } & { gender: string };
 
+type Dev3 = Dev & { gender: string };
+
 const requiredDev: Required<Dev2> = { age: 5 };
 
 const ageAndName: Pick<Dev, 'age' | 'name'> & {gender: string} = {age: 5, name: 't', gender: 'female' }
